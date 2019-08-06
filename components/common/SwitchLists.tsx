@@ -12,14 +12,14 @@ function SwitchLists(props: Props): React.ReactNode {
 
 	return (
 		<React.Fragment>
-   		<Footer>
-   			<FooterTab>
-   				<Button onPress={()=>navigate('Home')}>
-   					<Text>Lista</Text>
-   				</Button>
-   				<Button onPress={()=>navigate('Archives')}>
-   					<Text>Archiwum</Text>
-   				</Button>
+   			<Footer>
+   				<FooterTab>
+					<Button onPress={()=>navigate('Home')}>
+						<Text>Lista</Text>
+					</Button>
+					<Button onPress={()=>navigate('Archives')}>
+						<Text>Archiwum</Text>
+					</Button>
 				</FooterTab>
 			</Footer>
 		</React.Fragment>

@@ -12,7 +12,7 @@ class Archives extends Component< Props> {
 		const { navigation : { navigate } } = this.props;
 		return (
 			<Container>
-				<Header />
+				{/* <Header /> */}
 				<Content />
 				<SwitchLists />
 			</Container>
