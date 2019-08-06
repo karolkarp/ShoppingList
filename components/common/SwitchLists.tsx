@@ -1,23 +1,28 @@
-import React, { Component } from 'react';
-import { withNavigation } from 'react-navigation';
-import { Container, Text, Content,  Header, Footer, FooterTab, Button } from 'native-base';
+import React from 'react';
+import {
+	withNavigation,
+	NavigationParams,
+	NavigationScreenProp,
+	NavigationState
+} from 'react-navigation';
+import { Text, Footer, FooterTab, Button } from 'native-base';
 
 interface Props {
-	navigation: {navigate:object}
+	navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
 
-function SwitchLists(props: Props): React.ReactNode {
+function SwitchLists(props: Props): React.SFCElement<Props> {
 
-	const {navigate} = props.navigation;
+	const { navigation } = props;
 
 	return (
 		<React.Fragment>
    			<Footer>
    				<FooterTab>
-					<Button onPress={()=>navigate('Home')}>
+					<Button onPress={():boolean=>navigation.navigate('Home')}>
 						<Text>Lista</Text>
 					</Button>
-					<Button onPress={()=>navigate('Archives')}>
+					<Button onPress={():boolean=>navigation.navigate('Archives')}>
 						<Text>Archiwum</Text>
 					</Button>
 				</FooterTab>

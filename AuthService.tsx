@@ -1,10 +1,10 @@
 import consts from './consts';
 
 
-const { SUCCESS, NOT_FOUND } = consts;
+// const { SUCCESS, NOT_FOUND } = consts;
 class AuthService {
 
-	async fetch(url:string, options:object) {
+	public async fetch(url:string, options:object):Promise<object|void> {
 		const headers = {
 			Accept: 'application/json',
 			'Content-Type': 'application/json; charset=utf-8',
@@ -14,13 +14,13 @@ class AuthService {
 			headers,
 			...options,
 		})
-			.then((response) => {
-				return response.json().then((data) => { return { status: response.status, body: data }; });
+			.then((response):object => {
+				return response.json()
+					.then((data):object => { return { status: response.status, body: data }; });
 			})
-			.catch(e => console.error(e));
+			.catch((e):void => console.error(e));
 	}
 
-	
 }
 
 export default AuthService;
