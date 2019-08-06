@@ -1,18 +1,17 @@
-import React, { Component, Fragment } from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, FlatList } from 'react-native';
 import {
 	withNavigation,
 	NavigationParams,
 	NavigationScreenProp,
 	NavigationState
 } from 'react-navigation';
-import { Container, Text, Left, Right,  Body, Title, Content,  List, Footer, FooterTab, Button } from 'native-base';
+import { Container, Content} from 'native-base';
 import SwitchLists from '../common/SwitchLists';
 import {connect} from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../../store/mapToProps';
 import PurchaseListItem from './PurchaseListItem';
 import AppHeader from '../common/AppHeader';
-// import { FlatList } from 'react-native-gesture-handler';
 
 interface Props{
 	navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -20,9 +19,6 @@ interface Props{
 }
 class Archives extends Component< Props> {
 
-	public componentDidMount():void{
-		console.log(this.props);
-	}
 
 	public render(): React.ReactNode {
 		const { navigation : { navigate }, shopArchivedLists } = this.props;
