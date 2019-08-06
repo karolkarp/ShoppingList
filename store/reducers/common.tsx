@@ -1,11 +1,11 @@
 /* eslint-disable indent */
 interface Actions {
 	type: string;
-	shopLists: object[];
+	processing: boolean;
 }
 
 const initialState = {
-	shopLists: [],
+	processing: false,
 };
 
 export const common = (state = initialState, action: Actions): object => {
@@ -13,7 +13,7 @@ export const common = (state = initialState, action: Actions): object => {
 		case 'SET_LIST':
 			return {
 				...state,
-				shopLists: action.shopLists,
+				processing: action.processing,
 			};
 		default:
 			return state;
